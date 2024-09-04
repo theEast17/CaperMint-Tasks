@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Category List</title>
+</head>
+<body>
+  <h1>Category List</h1>
+  <a href="/category/add">Add New Category</a>
+  <ul>
+    <% categories.forEach(category => { %>
+      <li><%= category.name %> (<%= category.parentCategory ? category.parentCategory.name : 'None' %>)</li>
+    <% }); %>
+  </ul>
+</body>
+</html>

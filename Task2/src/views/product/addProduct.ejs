@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add Product</title>
+</head>
+<body>
+  <h1>Add New Product</h1>
+  <form action="/product/add" method="POST" enctype="multipart/form-data">
+    <label>Title</label>
+    <input type="text" name="title" required>
+    
+    <label>Quantity</label>
+    <input type="number" name="qty" required>
+    
+    <label>Color</label>
+    <input type="text" name="color">
+    
+    <label>Size</label>
+    <input type="text" name="size">
+    
+    <label>Category</label>
+    <select name="category" required>
+      <% categories.forEach(category => { %>
+        <option value="<%= category._id %>"><%= category.name %></option>
+      <% }); %>
+    </select>
+    
+    <label>Description</label>
+    <textarea name="description"></textarea>
+    
+    <label>Amount</label>
+    <input type="number" name="amount" required>
+    
+    <label>Image</label>
+    <input type="file" name="image" required>
+    
+    <button type="submit">Add Product</button>
+  </form>
+</body>
+</html>

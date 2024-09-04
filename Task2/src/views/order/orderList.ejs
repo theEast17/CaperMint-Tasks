@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Order List</title>
+</head>
+<body>
+  <h1>Order List</h1>
+  <ul>
+    <% orders.forEach(order => { %>
+      <li>
+        <a href="/order/details/<%= order._id %>">
+          Order by <%= order.user.username %> - Status: <%= order.orderStatus %> - Total: <%= order.totalAmount %>
+        </a>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add Category</title>
+</head>
+<body>
+  <h1>Add Category</h1>
+  <form action="/category/add" method="POST">
+    <label>Name</label>
+    <input type="text" name="name" required>
+    <label>Parent Category</label>
+    <select name="parentCategory">
+      <option value="">None</option>
+      <% categories.forEach(category => { %>
+        <option value="<%= category._id %>"><%= category.name %></option>
+      <% }); %>
+    </select>
+    <button type="submit">Add Category</button>
+  </form>
+</body>
+</html>
